@@ -27,21 +27,26 @@ public class RestClient {
 			request.setURI(new URI(uri));
 		} catch (URISyntaxException e1) {
 			System.err.println("O URL enviado não é valido.");
+			return null;
 		}
 		HttpResponse response = null;
 		try {
 			response = httpclient.execute(request);
 		} catch (ClientProtocolException e1) {
 			System.err.println(erroLigacao);
+			return null;
 		} catch (IOException e1) {
 			System.err.println(erroLigacao);
+			return null;
 		}
 		try {
 			in = new BufferedReader(new InputStreamReader(response.getEntity().getContent()));
 		} catch (IllegalStateException e1) {
 			System.err.println(erroLigacao);
+			return null;
 		} catch (IOException e1) {
 			System.err.println(erroLigacao);
+			return null;
 		}
 		
 		StringBuffer sb = new StringBuffer("");
@@ -54,11 +59,13 @@ public class RestClient {
 			}
 		} catch (IOException e1) {
 			System.err.println("Não foi possível obter dados da ligação.");
+			return null;
 		}
 		try {
 			in.close();
 		} catch (IOException e) {
 			System.err.println("Não foi possível terminar a ligação.");
+			return null;
 		}
 		finally {
 			if (in != null) {
@@ -66,6 +73,7 @@ public class RestClient {
 					in.close();
 				} catch (IOException e) {
 					System.err.println("Não foi possível terminar a ligação.");
+					return null;
 				}
 			}
 		}

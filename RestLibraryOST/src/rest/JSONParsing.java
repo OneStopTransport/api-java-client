@@ -13,11 +13,10 @@ public class JSONParsing {
 
 	public static Object parsed(String toParse, JSONClasses classe) {
 		Gson gson = new GsonBuilder().create();
-				
-		if (checkErrors(toParse))
+		
+		if (toParse == null || checkErrors(toParse))
 			return null;
-		
-		
+				
 		StopList stops = null;
 		RouteList routes = null;
 		StopTimeList times = null;

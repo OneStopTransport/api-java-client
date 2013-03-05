@@ -3,7 +3,6 @@ package main;
 import ostCom.OSTConnection;
 import rest.JSONParsing;
 import utils.Constants;
-import classes.Route;
 import classes.RouteList;
 import classes.StopList;
 import enumerations.JSONClasses;
@@ -23,9 +22,10 @@ public class Main {
 		String routesStr = OSTConnection.getRoutes(0, numberRoutes, Constants.SMTUC);
 		RouteList routes = (RouteList)JSONParsing.parsed(routesStr, JSONClasses.Routes); 
 				
-		for (Route routeTemp: routes.getObjects()) {
-			System.out.println(routeTemp);
-		}
+		if (routes == null || routes.getObjects()==null || routes.getObjects().size()==0)
+			System.out.println("Não foi possível encontrar rotas");
+		else 
+			System.out.println(routes.getObjects().get(0));
 	}
 
 	/*
@@ -36,11 +36,9 @@ public class Main {
 		String stopsStr = OSTConnection.getStops(0, stopNumber, Constants.SMTUC);
 		StopList stops = (StopList)JSONParsing.parsed(stopsStr, JSONClasses.Stop); 		
 	
-		//imprime a paragem mais próxima
-		try {
-			System.out.println(stops.getObjects().get(0));
-		} catch (Exception e) {
+		if (stops == null || stops.getObjects()==null || stops.getObjects().size()==0)
 			System.out.println("Não foi possível encontrar uma paragem próxima");
-		}
+		else 
+			System.out.println(stops.getObjects().get(0));
 	}
 }
