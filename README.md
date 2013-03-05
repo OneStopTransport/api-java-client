@@ -14,6 +14,18 @@
 4. Quando correr o projecto, deverá verificar que o Compiler compilance level (Project->Properties->Java Compiler) é compatível com o JRE instalado.
 
 
+##Utilização
+
+Para utilizar a API criada, poderá consultar o ficheiro Main.java na *package* main para visualizar alguns exemplos.
+O código de seguida permite consultar as primeiras 25 paragens devolvidas pela plataforma OST:
+
+```java
+int stopNumber = 25;
+String stopsStr = OSTConnection.getStops(0, stopNumber, Constants.SMTUC);
+StopList stops = (StopList)JSONParsing.parsed(stopsStr, JSONClasses.Stop);
+System.out.println(stops);
+```
+
 ##Bibliotecas utilizadas
 * [GSON](http://code.google.com/p/google-gson/)
 * [HTTP Client 4.2.3 Apache](http://hc.apache.org/downloads.cgi)
