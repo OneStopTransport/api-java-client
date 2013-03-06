@@ -11,9 +11,11 @@
 
 2. Com o projecto criado, deverá substituir as pastas `src` e `libs` criadas pelas pastas existentes em **RestLibraryOST**.
 
-3. Alterar a variável **APIKEY** na *package* `utils`, no ficheiro `Constants.java` para a chave para servidor obtida na plataforma;
+   **NOTA**: no caso de encontrar vários erros do tipo `Class not found`, certifique-se que as bibliotecas da pasta _libs_ estão no `Build Path` do projecto.
 
-4. Quando correr o projecto, deverá verificar que o **Compiler compilance level** (`Project -> Properties -> Java Compiler`) é compatível com o **JRE** instalado.
+3. Alterar a variável **APIKEY** na *package* `utils`, no ficheiro `Constants.java` para a chave para servidor obtida na plataforma (pedida nos Requisitos);
+
+4. **IMPORTANTE**: Quando correr o projecto (`Run -> Run As -> Java Application -> Main`), deverá verificar que o **Compiler compilance level** (`Project -> Properties -> Java Compiler`) é compatível com o **JRE** instalado.
 
 
 ## Utilização
