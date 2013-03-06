@@ -12,16 +12,7 @@ public class Point {
 	float [] coordinates;
 	
 	public Point(String type, float[] coordinates) {
-		super();
-		
-		System.out.println("Isto é chamado e as coordenadas são ");
-		try {
-			System.out.println(coordinates[0]);
-			System.out.println(coordinates[1]);
-		} catch(Exception e) {
-			e.printStackTrace();
-		}
-		
+		super();		
 		this.type = type;
 		this.coordinates = coordinates;
 	}

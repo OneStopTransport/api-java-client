@@ -39,10 +39,7 @@ public class JSONParsing {
 				stops = null;
 			}
 		} catch (JsonSyntaxException e) {
-			e.printStackTrace();
 			System.err.println("Tem que colocar a chave da OST no ficheiro Constants na package utils.");
-		} catch (Exception e) {
-			System.err.println("Não foi possível obter um objecto JAVA a partir do JSON recebido.");
 		}
 		return stops;
 	}
