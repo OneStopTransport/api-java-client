@@ -1,6 +1,6 @@
 ## Requisitos
 
-* Registar conta de utilizador no portal [ost.pt](ost.pt) e obter uma **API Key** (Chave para *Servidor*)
+* Registar conta de utilizador no portal [ost.pt](https://www.ost.pt/) e obter uma **API Key** (Chave para *Servidor*)
 
 * [Eclipse](http://eclipse.org/) como IDE (caso pretenda usar outro, deve adaptar as instruções que se seguem)
 
