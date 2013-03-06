@@ -11,7 +11,7 @@
 
 2. Com o projecto criado, deverá substituir as pastas `src` e `libs` criadas pelas pastas existentes em **RestLibraryOST**.
 
-**NOTA**: no caso de encontrar vários erros do tipo `Class not found`, certifique-se que as bibliotecas da pasta _libs_ estão no `Build Path` do projecto.
+   **NOTA**: no caso de encontrar vários erros do tipo `Class not found`, certifique-se que as bibliotecas da pasta _libs_ estão no `Build Path` do projecto.
 
 3. Alterar a variável **APIKEY** na *package* `utils`, no ficheiro `Constants.java` para a chave para servidor obtida na plataforma (pedida nos Requisitos);
 
