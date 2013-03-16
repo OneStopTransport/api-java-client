@@ -35,25 +35,20 @@ public class GetSchedules {
 		DateFormat rangeFormat = new SimpleDateFormat("hh");
 		
 		for (StopTime stoptime:stopTimes.getObjects()) {
-			System.out.println(stoptime.toString());
-			try {
-				Date dateArrival = dateFormat.parse(stoptime.getArrival_times());
-				Date dateDeparture = dateFormat.parse(stoptime.getDeparture_times());
-				
-				Date rangeParam = rangeFormat.parse(rangeDate+"");
-				
-				long arrivalTime = dateArrival.getTime();
-				long departureTime = dateDeparture.getTime();
-				
-				long floorDate = arrivalTime - rangeParam.getTime();
-				long ceilDate = arrivalTime + rangeParam.getTime();
-				
-				assertTrue( floorDate <= arrivalTime && arrivalTime <= ceilDate );
-				assertTrue( floorDate <= departureTime && departureTime <= ceilDate );
-
-			} catch (Exception e) {
-				fail("Estudasses");
-			}
+		
+			Date dateArrival = dateFormat.parse(stoptime.getArrival_times());
+			Date dateDeparture = dateFormat.parse(stoptime.getDeparture_times());
+			
+			Date rangeParam = rangeFormat.parse(rangeDate+"");
+			
+			long arrivalTime = dateArrival.getTime();
+			long departureTime = dateDeparture.getTime();
+			
+			long floorDate = arrivalTime - rangeParam.getTime();
+			long ceilDate = arrivalTime + rangeParam.getTime();
+			
+			assertTrue( floorDate <= arrivalTime && arrivalTime <= ceilDate );
+			assertTrue( floorDate <= departureTime && departureTime <= ceilDate );
 		}
 	}
 }
