@@ -60,14 +60,14 @@ public class JSONParsing {
 		} else if (toParse.contains(err404)) {
 			System.err.println(ostError+err404+endError);
 			return true;
-		} else if (toParse.contains(ostError+err500+endError)) {	
-			System.err.println(err500);
+		} else if (toParse.contains(err500)) {	
+			System.err.println(ostError+err500+endError);
 			return true;
-		} else if (toParse.contains(ostError+err502+endError)) {	
-			System.err.println(err502);
+		} else if (toParse.contains(err502)) {	
+			System.err.println(ostError+err502+endError);
 			return true;
-		} else if (toParse.contains(ostError+err503+endError)) {	
-			System.err.println(err503);
+		} else if (toParse.contains(err503)) {	
+			System.err.println(ostError+err503+endError);
 			return true;
 		} 
 		
